@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Bus - transportation</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/animate.css" rel="stylesheet">	
+	<link href="css/responsive.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+	    <script src="js/html5shiv.js"></script>
+	    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+				$(document).ready(function(){
+					var maxField = 30; //Input fields increment limitation
+					var addButton = $('.add_button'); //Add button selector
+					var wrapper = $('.field_wrapper'); //Input field wrapper
+					var fieldHTML = '<div id="stopfield"><input type="text" name="field_name[]" value=""/><a href="javascript:void(0);" class="remove_button" title="Remove field"><img src="images/remove-icon.png"/></a></div>'; //New input field html 
+					var x = 1; //Initial field counter is 1
+					$(addButton).click(function(){ //Once add button is clicked
+						if(x < maxField){ //Check maximum number of input fields
+							x++; //Increment field counter
+							$(wrapper).append(fieldHTML); // Add field html
+						}
+					});
+					$(wrapper).on('click', '.remove_button', function(e){ //Once remove button is clicked
+						e.preventDefault();
+						$(this).parent('div').remove(); //Remove field html
+						x--; //Decrement field counter
+					});
+				});
+</script>
+
+</head>
+
+<body>
+
+<header id="header" role="banner">
+		<div class="main-nav">
+			
+        </div> 
+    </header>
+	
+	
+	
+<section id="home">
+<div class="col-sm-7" id="adminsection">
+				<div class="row">
+						<div id="contact-section">
+							<h3>Enter bus details</h3>
+					    	<form id="main-contact-form" class="contact-form" name="contact-form">
+							<div class="col-sm-5">
+								<h4>Bus Number : </h4>
+									<div class="form-group">
+										<input type="number" name="busnumber" min="1" max="600" class="form-control" placeholder="" id="">
+									</div>
+								<h4>Source : </h4>
+									<div class="form-group">
+										<input type="text" name="source" class="form-control" placeholder="" id="" required>
+									</div>	
+								<h4>destination : </h4>
+									<div class="form-group">
+										<input type="text" name="destination" class="form-control" placeholder="" id="" required>
+									</div>	
+							</div>
+							<div class="col-sm-7">
+							<h4>Stops : </h4>
+					            <div class="form-group">
+									<div class="field_wrapper">
+									<div id="stopfield">
+											<input type="text" name="field_name[]" value=""/>
+												<a href="javascript:void(0);" class="add_button" title="Add field"><img src="images/add-icon.png"/></a>		
+									</div>
+									</div>
+					                <button type="button" class="btn btn-primary pull-right" onclick="exampleSearch()">Submit</button>
+					            </div>
+							</div>
+					        </form>
+					    </div>
+				</div>
+</div>
+
+	
+</section>
+
+
+</body>
+
+
+	<script type="text/javascript" src="js/admin.js" ></script>
+	<script type="text/javascript" src="js/gen_validatorv4.js" ></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+  	<script type="text/javascript" src="js/gmaps.js"></script>
+	<script type="text/javascript" src="js/smoothscroll.js"></script>
+    <script type="text/javascript" src="js/jquery.parallax.js"></script>
+    <script type="text/javascript" src="js/jquery.scrollTo.js"></script>
+    <script type="text/javascript" src="js/jquery.nav.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>  
+</html>
